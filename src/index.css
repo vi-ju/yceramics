@@ -1,0 +1,239 @@
+:root {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F1F1F1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 109%;
+  letter-spacing: -0.02em;
+  color: #0A0A14;
+}
+
+h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.96);
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.96);
+}
+
+.main-content {
+  margin-left: 20%;
+  width: 80%;
+  background-color: #E3E5E5;
+  padding: 10px 8px 64px 8px;
+  min-height: 100vh;
+}
+
+.hero-image {
+  width: 100%;
+  height: 70vh;
+  background-color: white;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  min-width: 100%;
+  border-radius: 2px;
+}
+
+.image-card {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.card-img {
+  transition: transform 0.48s cubic-bezier(0.4,0,0.2,1);
+}
+
+.image-card:hover .card-img {
+  transform: scale(1.025);
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  opacity: 0.14;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noiseFilter)"/></svg>');
+  background-size: 120px 120px;
+  animation: grainMove 0.7s steps(2) infinite;
+}
+
+@keyframes grainMove {
+  0% { background-position: 0 0; }
+  10% { background-position: 10px 10px; }
+  20% { background-position: -10px 5px; }
+  30% { background-position: 5px -10px; }
+  40% { background-position: -5px 15px; }
+  50% { background-position: 15px -5px; }
+  60% { background-position: -15px 10px; }
+  70% { background-position: 10px -15px; }
+  80% { background-position: -10px 5px; }
+  90% { background-position: 5px 10px; }
+  100% { background-position: 0 0; }
+}
+
+@media (min-width: 800px) and (max-width: 949px), (max-width: 799px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 10px 8px 64px 8px !important;
+    padding-top: 10px !important;
+  }
+  .grid.grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-image {
+    height: 50vh !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-top: 64px !important;
+  }
+  .main-content > .hero-image {
+    margin-top: 80px !important;
+  }
+}
+
+@media (min-width: 950px) {
+  .main-content {
+    margin-left: 20% !important;
+    width: 80% !important;
+    padding: 10px 8px 64px 8px !important;
+    padding-top: 10px !important;
+  }
+  .main-content > .hero-image,
+  .main-content .hero-image {
+    margin-top: 8px !important;
+    margin-block-start: 0 !important;
+  }
+}
+
+@media (max-width: 799px) {
+  h1 {
+    font-size: 28px !important;
+  }
+}
+
+@media (max-width: 949px) {
+  .main-content > .hero-image,
+  .main-content .hero-image {
+    margin-top: 112px !important;
+  }
+}
+
+.p1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+
+.paragraph-xl {
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.011em;
+}
+
+.item-main-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 109%;
+  letter-spacing: -0.02em;
+  color: #0A0A14;
+  text-transform: none;
+}
+
+.large-text {
+  font-size: 32px !important;
+  line-height: 1.3 !important;
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.p2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  text-transform: none;
+}
+
+.p3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.c1 {
+  font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+}
+
+.text-black-custom {
+  color: #050512;
+}
+.text-gray-custom {
+  color: #6E6E7B;
+}
+.bg-black-custom {
+  background-color: #050512;
+}
+.bg-gray-custom {
+  background-color: #6E6E7B;
+}
+
+img {
+  border-radius: 2px;
+} 

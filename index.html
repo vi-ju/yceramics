@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y Ceramics by Juliana Vislova</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Manrope', sans-serif;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 109%;
+            letter-spacing: -0.02em;
+            color: #0A0A14;
+        }
+        h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #6F6F7B;
+        }
+        .sidebar-text {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0;
+            color: #0A0A14;
+        }
+        .sidebar-bg {
+            background-color: #F2F2ED;
+            width: 26%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 32px 32px 0 32px;
+            z-index: 10;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .sidebar-content {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            margin-top: auto;
+            padding-bottom: 32px;
+        }
+        .sidebar-section {
+            margin-bottom: 0;
+        }
+        .sidebar-section .sidebar-text {
+            display: block;
+        }
+        .main-content {
+            margin-left: 26%;
+            width: 74%;
+            background-color: white;
+            padding: 8px 8px 64px 8px;
+            min-height: 100vh;
+        }
+        .byline {
+            font-feature-settings: "ss02" 1;
+            letter-spacing: 0.05em;
+        }
+        .hero-image {
+            width: 100%;
+            height: 70vh;
+            background-color: white;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            min-width: 100%;
+        }
+        .h2 {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 110%;
+            letter-spacing: -0.02em;
+        }
+        .p1 {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 130%;
+            letter-spacing: -0.02em;
+            color: #0A0A14;
+        }
+        .p2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0.01em;
+            color: #0A0A14;
+        }
+        .p3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0;
+            color: #0A0A14;
+        }
+        .image-card {
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .grain-overlay {
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            opacity: 0.14;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noiseFilter)"/></svg>');
+            background-size: 120px 120px;
+            animation: grainMove 0.7s steps(2) infinite;
+        }
+        @keyframes grainMove {
+            0% { background-position: 0 0; }
+            10% { background-position: 10px 10px; }
+            20% { background-position: -10px 5px; }
+            30% { background-position: 5px -10px; }
+            40% { background-position: -5px 15px; }
+            50% { background-position: 15px -5px; }
+            60% { background-position: -15px 10px; }
+            70% { background-position: 10px -15px; }
+            80% { background-position: -10px 5px; }
+            90% { background-position: 5px 10px; }
+            100% { background-position: 0 0; }
+        }
+        .about-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .about-link h3 {
+            margin-bottom: 0;
+            transition: text-decoration 0.2s ease;
+        }
+        .chevron-animate {
+            font-size: 8px;
+            color: #6F6F7B;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .about-link:hover h3 {
+            text-decoration: underline;
+        }
+        .about-link:hover .chevron-animate {
+            transform: translateX(5px);
+        }
+        .card-img {
+            transition: transform 0.405s cubic-bezier(0.4,0,0.2,1);
+        }
+        .image-card:hover .card-img {
+            transform: scale(1.04);
+        }
+        .main-content > .hero-image {
+            margin-top: 64px !important;
+        }
+    </style>
+    <style>
+    @media (min-width: 800px) and (max-width: 949px), (max-width: 799px) {
+        .sidebar-bg { 
+            display: none !important; 
+            width: 0;
+        }
+        .tablet-header { 
+            display: flex !important; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #F2F2ED;
+            padding: 16px;
+            z-index: 20;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .main-content {
+            margin-left: 0 !important;
+            width: 100% !important;
+            padding: 8px 8px 64px 8px !important;
+            padding-top: 8px !important;
+        }
+        .grid.grid-cols-3 {
+            grid-template-columns: 1fr !important;
+        }
+        .hero-image {
+            height: 50vh !important;
+            min-height: 0 !important;
+            max-height: none !important;
+            margin-top: 64px !important;
+        }
+        .main-content > .hero-image {
+            margin-top: 80px !important;
+        }
+    }
+    @media (min-width: 950px) {
+        .sidebar-bg { 
+            display: flex !important; 
+            width: 26%;
+        }
+        .tablet-header { 
+            display: none !important; 
+        }
+        .main-content {
+            margin-left: 26% !important;
+            width: 74% !important;
+            padding: 8px 8px 64px 8px !important;
+        }
+        .main-content > .hero-image,
+        .main-content .hero-image {
+            margin-top: 8px !important;
+            margin-block-start: 0 !important;
+        }
+    }
+    .tablet-header .nav-block {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-end;
+    }
+    @media (min-width: 800px) and (max-width: 949px) {
+        .main-content > .hero-image {
+            margin-top: 80px !important;
+        }
+    }
+    @media (max-width: 799px) {
+        .main-content > .hero-image {
+            margin-top: 80px !important;
+        }
+        h1 {
+            font-size: 28px !important;
+        }
+    }
+    @media (max-width: 949px) {
+      .main-content > .hero-image,
+      .main-content .hero-image {
+        margin-top: 112px !important;
+      }
+    }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Tablet Header (hidden by default, shown on tablet) -->
+    <div class="tablet-header" style="display:none;">
+        <div class="logo-block">
+            <h1>Y Ceramics</h1>
+            <h3>BY JULIANA VISLOVA</h3>
+        </div>
+        <div class="nav-block">
+            <h2 style="margin:0;"><a href="about.html" style="text-decoration:none; color:inherit;">About</a></h2>
+            <h2 style="margin:0;"><a href="#contact" style="text-decoration:none; color:inherit;">Contact</a></h2>
+            <a href="https://www.instagram.com/yceramics_/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-bg">
+        <div>
+            <a href="index.html" class="block">
+                <h1>Y Ceramics</h1>
+                <h3>BY JULIANA VISLOVA</h3>
+            </a>
+        </div>
+
+        <div class="sidebar-content">
+            <a href="about.html" class="about-link">
+              <h3 class="mb-1">ABOUT</h3>
+              <i class="fas fa-chevron-right chevron-animate"></i>
+            </a>
+            <p class="sidebar-text">
+                In my ceramic practice, I explore the delicate balance between structure and fluidity, precision and organic movement. My porcelain vessels emerge from an endless fascination with natural forms.
+            </p>
+            <h3 class="mb-1">CONTACT</h3>
+            <p class="sidebar-text">
+                I release the collections every 3-4 months.<br>
+                Get on the list to be first to know.
+            </p>
+            <a href="https://www.instagram.com/yceramics_/" target="_blank" class="text-gray-900 hover:text-gray-600">
+                <i class="fab fa-instagram text-xl"></i>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <div class="hero-image image-card mb-2">
+            <img src="images/item1.HEIC" alt="Featured Ceramic Work">
+        </div>
+
+        <!-- Gallery Grid -->
+        <div>
+            <div class="grid grid-cols-3 gap-2 w-full">
+                <a href="work1.html" class="aspect-square image-card" style="display:block;">
+                    <img src="images/item2.png" alt="Ceramic Work 1" 
+                         class="w-full h-full object-cover card-img">
+                </a>
+                <a href="work2.html" class="aspect-square image-card" style="display:block;">
+                    <img src="images/item3.png" alt="Ceramic Work 2" 
+                         class="w-full h-full object-cover card-img">
+                </a>
+                <a href="work3.html" class="aspect-square image-card" style="display:block;">
+                    <img src="images/item4.png" alt="Ceramic Work 3" 
+                         class="w-full h-full object-cover card-img">
+                </a>
+            </div>
+        </div>
+    </main>
+    <div class="grain-overlay"></div>
+</body>
+</html> 
