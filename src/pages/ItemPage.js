@@ -70,7 +70,7 @@ const ItemPage = () => {
 
       {/* More Items Section */}
       <div className="mt-8 pt-3 border-t border-gray-300">
-        <h2 className="mb-3">MORE</h2>
+        <h2 className="mb-3">MORE WORKS</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {otherItems.map((otherItem) => (
             <Link key={otherItem.id} to={`/work/${otherItem.id}`} className="block flex flex-col h-full">
