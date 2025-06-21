@@ -34,7 +34,7 @@ const Navbar = () => (
           <i className="fas fa-chevron-right chevron-animate"></i>
         </Link>
           <p className="sidebar-text mt-1">
-          In my ceramic practice, I explore the delicate balance between structure and fluidity, precision and organic movement. My porcelain vessels emerge from an endless fascination with natural forms.
+          Juliana is a San Francisco based artist working across a variety of materials. Her ceramic practice centers on quiet moments of transformation
         </p>
         </div>
         <div className="mb-6">

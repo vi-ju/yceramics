@@ -3,8 +3,8 @@ import React from 'react';
 const About = () => {
   return (
     <main
-      className="main-content bg-[#F1F1F1] min-h-screen flex justify-center"
-      style={{ paddingTop: '32px' }}
+      id="about-page"
+      className="main-content bg-[#F1F1F1] min-h-screen flex"
     >
       <div className="flex flex-row items-start gap-12 max-w-screen-lg w-full">
         <div className="w-[400px]">
